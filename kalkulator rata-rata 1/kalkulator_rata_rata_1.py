@@ -13,7 +13,7 @@ st.title("📊 Kalkulator Rata-Rata Interaktif")
 st.markdown("Masukkan angka-angka yang dipisahkan koma untuk menghitung rata-rata dan melihat grafiknya.")
 st.markdown("---")
 
-# Pilih warna tema grafik
+
 warna = st.selectbox("🎨 Pilih Warna Grafik", ["viridis", "rocket", "magma", "coolwarm", "flare", "crest"])
 
 input_angka = st.text_input("Masukkan Angka (pisahkan dengan koma):", "10, 20, 30")
@@ -29,7 +29,7 @@ if st.button("Hitung & Tampilkan"):
             rata_rata = sum(angka) / len(angka)
             st.success(f"✅ Rata-rata: **{rata_rata:.2f}**")
 
-            # Statistik tambahan
+            
             st.info(f"""
 **📌 Statistik Tambahan:**
 - Jumlah Data: {len(angka)}
