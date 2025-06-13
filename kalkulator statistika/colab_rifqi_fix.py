@@ -1,54 +1,19 @@
 import streamlit as st
-import statistics
-import matplotlib.pyplot as plt
 
-st.set_page_config(page_title="Kalkulator Statistik", layout="centered")
+def hitung_rata_rata(angka_list):
+    if len(angka_list) == 0:
+        return 0
+    return sum(angka_list) / len(angka_list)
 
-st.title("📊 Kalkulator Statistik Sederhana")
-st.write("Masukkan data numerik yang dipisahkan dengan koma (,)")
+st.title("📊 Kalkulator Rata-rata")
+st.write("Masukkan angka-angka yang dipisahkan dengan koma, lalu tekan tombol hitung.")
 
-# Input pengguna
-data_input = st.text_area("Contoh: 10, 20, 30, 40, 50", height=100)
+input_angka = st.text_input("Masukkan angka:", value="4, 7, 8")
 
-if st.button("Hitung Statistik"):
+if st.button("Hitung Rata-rata"):
     try:
-        # Parsing data
-        data = [float(item.strip()) for item in data_input.split(",") if item.strip() != ""]
-
-        if len(data) < 2:
-            st.warning("Masukkan minimal dua data untuk menghitung statistik.")
-        else:
-            # Perhitungan statistik
-            mean = statistics.mean(data)
-            median = statistics.median(data)
-            try:
-                mode = statistics.mode(data)
-            except statistics.StatisticsError:
-                mode = "Tidak ada modus tunggal"
-
-            stdev = statistics.stdev(data)
-            variance = statistics.variance(data)
-
-            # Menampilkan hasil
-            st.subheader("📈 Hasil Statistik")
-            st.write(f"Jumlah Data: {len(data)}")
-            st.write(f"Mean       : {mean}")
-            st.write(f"Median     : {median}")
-            st.write(f"Modus      : {mode}")
-            st.write(f"Stdev      : {stdev}")
-            st.write(f"Variansi   : {variance}")
-
-            # Visualisasi histogram
-            st.subheader("📉 Visualisasi Histogram")
-            fig, ax = plt.subplots()
-            ax.hist(data, bins='auto', color='skyblue', edgecolor='black')
-            ax.set_xlabel("Nilai")
-            ax.set_ylabel("Frekuensi")
-            ax.set_title("Histogram Data")
-            st.pyplot(fig)
-
+        angka_list = [float(angka.strip()) for angka in input_angka.split(',')]
+        rata_rata = hitung_rata_rata(angka_list)
+        st.success(f"Rata-rata dari angka yang dimasukkan adalah: {rata_rata}")
     except ValueError:
-        st.error("Input tidak valid! Pastikan hanya memasukkan angka yang dipisahkan koma.")
-
-if __name__ == "__main__":
-    main()
+        st.error("Input tidak valid! Pastikan hanya memasukkan angka yang dipisahkan dengan koma.")
