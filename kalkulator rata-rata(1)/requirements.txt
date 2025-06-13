@@ -1,4 +1,1 @@
-streamlit>=1.30.0
-pandas
-matplotlib.pyplot
-seaborn
+streamlit>=1.30.0 pandas matplotlib.pyplot seaborn
