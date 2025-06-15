@@ -6,13 +6,13 @@ import seaborn as sns
 
 # Konfigurasi halaman
 st.set_page_config(
-    page_title="Kalkulator Rata-Rata Interaktif",
+    page_title="Kalkulator Rata-Rata",
     page_icon="📊",
     layout="centered"
 )
 
 # Judul aplikasi
-st.title("📊 Kalkulator Rata-Rata Interaktif")
+st.title("📊 Kalkulator Rata-Rata")
 st.markdown("Masukkan angka-angka yang dipisahkan dengan koma, lalu lihat hasil rata-ratanya dan grafik batang visualisasinya.")
 st.markdown("---")
 
@@ -20,7 +20,7 @@ st.markdown("---")
 warna = st.selectbox("🎨 Pilih Tema Warna Grafik", ["viridis", "rocket", "magma", "coolwarm", "crest", "flare"])
 
 # Input angka
-input_angka = st.text_input("📝 Masukkan angka (pisahkan dengan koma):", "70, 80, 90")
+input_angka = st.text_input("📝 Masukkan angka (pisahkan dengan koma):")
 
 if st.button("🔍 Hitung Rata-Rata & Tampilkan Grafik"):
     try:
@@ -60,4 +60,4 @@ if st.button("🔍 Hitung Rata-Rata & Tampilkan Grafik"):
         st.error(f"❌ Terjadi kesalahan: {e}")
 
 st.markdown("---")
-st.markdown("<center><sub>Dibuat dengan ❤️ oleh Virtual Lab</sub></center>", unsafe_allow_html=True)
+st.markdown("<center><sub>Dibuat M.Rifqi Al Khadziq</sub></center>", unsafe_allow_html=True)
