@@ -20,7 +20,7 @@ st.markdown("---")
 warna = st.selectbox("🎨 Pilih Tema Warna Grafik", ["viridis", "rocket", "magma", "coolwarm", "crest", "flare"])
 
 # Input angka
-input_angka = st.text_input("📝 Masukkan angka (pisahkan dengan koma):", "Contohnya 70, 80, 90")
+input_angka = st.text_input("📝 Masukkan angka (pisahkan dengan koma):", "Contohnya: 70, 80, 90")
 
 if st.button("🔍 Hitung Rata-Rata & Tampilkan Grafik"):
     try:
