@@ -60,4 +60,4 @@ if st.button("🔍 Hitung Rata-Rata & Tampilkan Grafik"):
         st.error(f"❌ Terjadi kesalahan: {e}")
 
 st.markdown("---")
-st.markdown("<center><sub>Dibuat M.Rifqi Al Khadziq</sub></center>", unsafe_allow_html=True)
+st.markdown("<center><sub>Dibuat oleh M.Rifqi Al Khadziq 👋🏽😄</sub></center>", unsafe_allow_html=True)
